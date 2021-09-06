@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Students (objects)</title>
+  </head>
+  <body>
+    <h1>Students</h1>
+    
+    <table id="list">
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Middle name</th>
+          <th>Nickname</th>
+          <th>Last name</th>
+          <th>House</th>
+          <th>Photo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- animal template will be copied and inserted here -->
+        
+      </tbody>
+    </table>
+
+    <template id="student">
+      <tr>
+        <td data-field="firstName">FIRST NAME</td>
+        <td data-field="middleName">MIDDLE NAME</td>
+        <td data-field="nickName">NICK NAME</td>
+        <td data-field="lastName">LAST NAME</td>
+        <td data-field="house">HOUSE</td>
+        <td data-field="photo"><img class="image" src="" alt=""></td>
+      </tr>
+    </template>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
