@@ -103,12 +103,12 @@ function displayStudent(student) {
     clone.querySelector("[data-field=lastName]").textContent = student.lastname;
     clone.querySelector("[data-field=house]").textContent = student.house;
     if (student.lastname.includes("-")) {
-        clone.querySelector("[data-field=photo] img").src = `/images/${student.lastname.substring(student.lastname.indexOf("-") + 1)}_${student.firstname[0]}.png`
+        clone.querySelector("[data-field=photo] img").src = `images/${student.lastname.substring(student.lastname.indexOf("-") + 1)}_${student.firstname[0]}.png`
         console.log(document.querySelector("[data-field=photo] img".src));
     } else if (student.lastname.includes("Patil")) {
-        clone.querySelector("[data-field=photo] img").src = `/images/${student.lastname}_${student.firstname}.png`;
+        clone.querySelector("[data-field=photo] img").src = `images/${student.lastname}_${student.firstname}.png`;
     } else {
-         clone.querySelector("[data-field=photo] img").src = `/images/${student.lastname}_${student.firstname[0]}.png`
+         clone.querySelector("[data-field=photo] img").src = `images/${student.lastname}_${student.firstname[0]}.png`
     }
     // append clone to list
     document.querySelector("#list tbody").appendChild(clone);
