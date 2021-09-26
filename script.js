@@ -300,7 +300,6 @@ function displayStudent(student) {
   } else {
     clone.querySelector("[data-field=photo] img").src = `images/${student.lastname.toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
   } if (student.firstname === "Agata") {
-    clone.querySelector("[data-field=photo] img").src = `images/foto.jpg`;
     clone.querySelector("[data-field=photo] img").style.width = "108px";
     clone.querySelector("[data-field=photo] img").style.borderRadius = "10%";
   }
