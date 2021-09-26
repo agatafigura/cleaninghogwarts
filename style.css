@@ -1,0 +1,413 @@
+@font-face {
+    font-family: Harry;
+    src: url(HarryP-MVZ6w.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --white: rgb(236, 224, 191);
+    --gray: rgb(182, 146, 105);
+    --brown: rgb(82, 62, 36);
+}
+
+#sort-title {
+    font-weight: 700;
+    color: var(--brown);
+    margin-top: 0;
+}
+
+#sorting p.sortBy {
+    text-decoration: underline;
+}
+
+#sorting p.sortBy[data-sort-direction="asc"]::after{
+    content: "▼";
+}
+
+#sorting p.sortBy[data-sort-direction="desc"]::after{
+    content: "▲";
+}
+
+td {
+    color:rgb(255, 231, 200);
+}
+
+td input {
+    background-color: rgb(255, 231, 200);
+    color: rgb(121, 100, 70);
+    border: none;
+    border-radius: 5%;
+    font-family: 'Open Sans', sans-serif;
+    width: 101px;
+    height: 20px;
+}
+
+td[data-field=perfect], td[data-field=squad] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 12vw;
+}
+
+td[data-field=perfect]::after {
+    content: "⚜️";
+    font-size: 17px;
+}
+
+td[data-field=squad]::after {
+    content: "🎖️";
+    font-size: 17px;
+    padding-right: 0.15vw;
+}
+
+td[data-field=perfect][data-perfect=false]::after {
+    filter: grayscale(1);
+}
+
+td[data-field=squad][data-squad=false]::after {
+    filter: grayscale(1);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.hidden2 {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dialog {
+    box-shadow: 1px 1px 10px #333;
+    border-radius: 12px;
+    padding: 2em;
+    background-color: rgb(240, 216, 196);
+    position: relative;
+  }
+  
+  button.closebutton {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    border: none;
+    color: white;
+  }
+
+  #dialog .closebutton {
+      position: relative;
+      right: -13em;
+  }
+  
+  .dialog h1 {
+    margin-top: 0;
+    font-family: Harry;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  #dialog h1 {
+      margin-top: 0;
+  }
+
+
+/*styling*/
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+   background-image: url(/background2.jpg);
+   background-size: 100%;
+   background-attachment: fixed;
+}
+
+#hogwarts {
+    margin: 0;
+    margin-bottom: 5vw;
+    font-family: Harry;
+    font-size: 60px;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 3px 3px var(--gray);
+    letter-spacing: 2px;
+    width: max-content;
+    position: relative;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 5vw;
+}
+
+#sorting {
+    display: inline;
+}
+
+tbody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 2vw;
+}
+
+tbody tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vw;
+    column-gap: 1vw;
+    width: 17vw;
+    background-color:rgb(197, 159, 115, 0.8);
+    padding-top: 1vw;
+    border-radius: 8%;
+}
+
+td {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+td[data-field=firstName], td[data-field=lastName] {
+    font-size: larger;
+    font-weight: 600;
+    text-shadow: 1px 1px rgb(121, 100, 70);;
+}
+
+
+
+#seemore {
+    margin-bottom: 0.5vw;
+    margin-top: 1.5vw;
+    font-weight: 700;
+}
+
+#expell {
+    margin-bottom: 1vw;
+    background-color: rgb(134, 45, 42);
+    color: var(--white);
+}
+
+#filtering {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--brown);
+    font-weight: 700;
+}
+
+#sorting {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 1vw;
+}
+
+#sorting p[data-action="sort"] {
+    font-weight: 700;
+    color:var(--gray);
+    margin-top: 0;
+}
+
+#filtering button {
+    background-color: var(--gray);
+    border: none;
+    color: var(--brown);
+    border-radius: 10%;
+    padding: 0.2vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#magnifier {
+    width: 2vw;
+    height: auto;
+}
+
+#search {
+    position: absolute;
+    top: 3vw;
+    right: 2vw;
+    display: flex;
+    column-gap: 0.5vw;
+}
+
+#search input {
+    border: 2px solid rgb(197, 159, 115);
+    border-radius: 5%;
+}
+
+#popup #dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    width: 30vw;
+    height: 95vh;
+    border-radius: 5%;
+}
+
+#popup #photo {
+    width: 10vw;
+}
+
+#popup #crest {
+    width: 5vw;
+    margin-bottom: 1.5vw;
+}
+
+#popup h1 {
+    margin-bottom: 1vw;
+    font-family: Harry;
+    font-size: 50px;
+}
+
+#popup p {
+    color:rgb(243, 237, 212);
+    /* font-weight: 700; */
+}
+
+#popup #features {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    font-size: 20px;
+    margin: 0;
+}
+
+#squad-member, #prefect-status {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.5vw;
+    
+}
+
+.span1, .span2, .span3, .span4 {
+    font-weight: 700;
+}
+
+#numberOfStudents {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--brown);
+    font-weight: 700;
+}
+
+#numberOfStudents span {
+    color: var(--gray);
+}
+
+#remove-aorb h1 {
+    color: rgb(148, 123, 86);  
+    text-shadow: 2px 2px rgb(243, 237, 212);
+}
+
+#remove-aorb p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: rgb(109, 90, 63);  
+}
+
+#remove-aorb button {
+    background-color: rgb(197, 159, 115);
+    border: none;
+    color: rgb(255, 231, 200);
+    border-radius: 10%;
+    padding: 0.2vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.sidebyside {
+    text-align: center;
+    margin-top: 2vw;
+}
+
+#cannotaddtosquad h1 {
+    color: rgb(148, 123, 86);  
+    text-shadow: 2px 2px rgb(243, 237, 212);
+}
+
+#cannotaddtosquad p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: rgb(109, 90, 63);  
+}
+
+#cannotaddtosquad button {
+    background-color: rgb(197, 159, 115);
+    border: none;
+    color: rgb(255, 231, 200);
+    border-radius: 10%;
+    padding: 0.2vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#cannotexpell h1 {
+    color: rgb(148, 123, 86);  
+    text-shadow: 2px 2px rgb(243, 237, 212);
+}
+
+#cannotexpell p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: rgb(109, 90, 63);  
+}
+
+#cannotexpell button {
+    background-color: rgb(197, 159, 115);
+    border: none;
+    color: rgb(255, 231, 200);
+    border-radius: 10%;
+    padding: 0.2vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.okbutton {
+    text-align: center;
+    margin-top: 2vw;
+}
+
+#hack-button {
+    position: absolute;
+    top: 1vw;
+    right: 2vw;
+    background-color: rgb(197, 159, 115);
+    border: none;
+    color: rgb(255, 231, 200);
+    border-radius: 10%;
+    padding: 0.2vw;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 20%;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(243, 237, 212, 0.7);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    position: relative;
+    left: 50%;
+    top: 5vw;
+    width: 80%;
+    padding-top: 1vw;
+}
