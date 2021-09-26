@@ -438,8 +438,7 @@ function displayStudent(student) {
       student.lastname;
 
     //img
-    document.querySelector(
-      "#popup #photo").src = `images/${student.lastname.substring(student.lastname.indexOf("-") + 1).toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
+    document.querySelector("#popup #photo").src = `images/${student.lastname.toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
 
     //gender
     document.querySelector("#popup #gender").textContent = student.gender;
