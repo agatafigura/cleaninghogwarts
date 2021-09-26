@@ -294,21 +294,12 @@ function displayStudent(student) {
   //photos
 
   if (student.lastname.includes("-")) {
-    clone.querySelector(
-      "[data-field=photo] img"
-    ).src = `images/${student.lastname.substring(
-      student.lastname.indexOf("-") + 1
-    ).toLowerCase}_${student.firstname[0].toLowerCase}.png`;
+    clone.querySelector("[data-field=photo] img").src = `images/${student.lastname.substring(student.lastname.indexOf("-") + 1).toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
   } else if (student.lastname.includes("Patil")) {
-    clone.querySelector(
-      "[data-field=photo] img"
-    ).src = `images/${student.lastname}_${student.firstname}.png`;
+    clone.querySelector("[data-field=photo] img").src = `images/${student.lastname.toLowerCase()}_${student.firstname.toLowerCase()}.png`;
   } else {
-    clone.querySelector(
-      "[data-field=photo] img"
-    ).src = `images/${student.lastname}_${student.firstname[0]}.png`;
-  }
-  if (student.firstname === "Agata") {
+    clone.querySelector("[data-field=photo] img").src = `images/${student.lastname.toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
+  } if (student.firstname === "Agata") {
     clone.querySelector("[data-field=photo] img").src = `images/foto.jpg`;
     clone.querySelector("[data-field=photo] img").style.width = "108px";
     clone.querySelector("[data-field=photo] img").style.borderRadius = "10%";
