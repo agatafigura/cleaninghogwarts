@@ -390,24 +390,6 @@ function displayStudent(student) {
     buildList();
   }
 
-  // //changing text on buttons *doesnt work*
-
-  // clone
-  // .querySelector("#make-a-prefect")
-  // .addEventListener("click", changeButtonText);
-
-  // function changeButtonText() {
-  //   var prefectButton = document.querySelector("#make-a-prefect");
-
-  //   if (prefectButton.value === "Make a prefect") {
-  //     prefectButton.value = "Remove prefect status";
-  //     console.log(prefectButton.value);
-  //   } else if (prefectButton.value === "Remove prefect status") {
-  //     prefectButton.value = "Make a prefect";
-  //     console.log(prefectButton.value);
-  //   }
-  // }
-
   //pop up
 
   let button = clone.querySelector("#seemore");
@@ -457,10 +439,7 @@ function displayStudent(student) {
 
     //img
     document.querySelector(
-      "#popup #photo"
-    ).src = `images/${student.lastname.substring(
-      student.lastname.indexOf("-") + 1
-    )}_${student.firstname[0]}.png`;
+      "#popup #photo").src = `images/${student.lastname.substring(student.lastname.indexOf("-") + 1).toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
 
     //gender
     document.querySelector("#popup #gender").textContent = student.gender;
