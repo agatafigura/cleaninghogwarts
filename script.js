@@ -298,7 +298,7 @@ function displayStudent(student) {
       "[data-field=photo] img"
     ).src = `images/${student.lastname.substring(
       student.lastname.indexOf("-") + 1
-    )}_${student.firstname[0]}.png`;
+    ).toLowerCase}_${student.firstname[0].toLowerCase}.png`;
   } else if (student.lastname.includes("Patil")) {
     clone.querySelector(
       "[data-field=photo] img"
