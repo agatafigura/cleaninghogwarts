@@ -539,7 +539,7 @@ function displayStudent(student) {
 }
 
 //making prefects function
-
+ 
 function tryToMakePerfect(selectedStudent) {
   const perfects = allStudents.filter((student) => student.perfect);
   const numberOfPerfects = perfects.length;
@@ -614,10 +614,15 @@ function tryToMakePerfect(selectedStudent) {
 
 document.querySelector("#hack-button").addEventListener("click", hackTheSystem);
 
+let clicked = true;
 function hackTheSystem() {
   addNewStudent();
   allStudents.forEach(randomizeBlood);
-  // limitedSquad();
+  buildList();
+  if (clicked === true) {
+    clicked = false;
+    document.querySelector("#hack-button").removeEventListener("click", hackTheSystem);
+  }
 }
 
 function addNewStudent() {
@@ -647,21 +652,3 @@ function randomizeBlood(student) {
     student.blood = "pure";
   }
 }
-
-// function limitedSquad() {
-//   let squadButton = document.querySelector("#add-to-squad");
-//   squadButton.addEventListener("click", addForTwoSeconds)
-
-//   function addForTwoSeconds() {
-//     if (student.squad === false) {
-//       student.squad = true;
-//       setTimeout(removeFromSquad, 2000);
-//     } else {
-//       student.squad = false;
-//     }
-//   }
-
-//   function removeFromSquad() {
-//     student.squad = false;
-//   }
-// }
